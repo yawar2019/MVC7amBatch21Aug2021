@@ -91,6 +91,43 @@ namespace MVC7amBatch21Aug2021.Controllers
             return View();
         }
 
+        public ActionResult SendData4()
+        {
+            EmployeeModel obj = new EmployeeModel();
+            obj.EmpId = 1;
+            obj.EmpName = "Abhishek";
+            obj.EmpSalary = 10000;
+
+           // object model = obj;
+            return View(obj);
+        }
+
+        public ActionResult SendData5()
+        {
+            List<EmployeeModel> listObj = new List<EmployeeModel>();
+
+            EmployeeModel obj = new EmployeeModel();
+            obj.EmpId = 1;
+            obj.EmpName = "Abhishek";
+            obj.EmpSalary = 10000;
+
+            EmployeeModel obj1 = new EmployeeModel();
+            obj1.EmpId = 2;
+            obj1.EmpName = "Komal";
+            obj1.EmpSalary = 20000;
+
+            EmployeeModel obj2 = new EmployeeModel();
+            obj2.EmpId = 3;
+            obj2.EmpName = "Amrita";
+            obj2.EmpSalary = 30000;
+
+            listObj.Add(obj);//abhishek
+            listObj.Add(obj1);//komal
+            listObj.Add(obj2);//amrita
+
+             
+            return View(listObj);
+        }
     }
 }
 

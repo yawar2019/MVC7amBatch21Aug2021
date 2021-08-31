@@ -134,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\JusticeController.cs" />
     <Compile Include="Controllers\NewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -158,6 +159,7 @@
     <Content Include="Views\New\SendData3.cshtml" />
     <Content Include="Views\New\SendData4.cshtml" />
     <Content Include="Views\New\SendData5.cshtml" />
+    <Content Include="Views\Justice\Injustice.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

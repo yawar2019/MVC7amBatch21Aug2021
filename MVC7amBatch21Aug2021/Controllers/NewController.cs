@@ -128,6 +128,20 @@ namespace MVC7amBatch21Aug2021.Controllers
              
             return View(listObj);
         }
+
+        public ViewResult TestView()
+        {
+            return View("../Views/Justice/Injustice.cshtml");
+        }
+
+        public RedirectResult TestResult()
+        {
+            return Redirect("http://www.google.com");
+        }
+        public RedirectResult TestResult2()
+        {   
+            return Redirect("index");
+        }
     }
 }
 

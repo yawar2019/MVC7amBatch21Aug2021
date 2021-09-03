@@ -1,0 +1,38 @@
+jsonResult:
+
+if u want to convert ur class object into jsonformat then u will use
+jsonResult class
+
+class Name:JsonResult
+MethodLJson
+
+json:javascript Object Notation Data
+this is one format of data which can be used by client and server to transfer information
+--it transfer data in Plain Text Format
+--it is more faster,lighter compare toany format of data  
+
+<html>
+<table id="table1">
+<tr>
+<th>id</th>
+<th>Name</th>
+<th>Salary</th>
+</tr>
+</table>
+</html>
+
+<script>
+$(ajax(
+{
+url:"http://localhost:61017/new/getJsonData",
+dataType:"GET"
+Content-Type:"application/json"
+
+success:function(result){
+$.(each(result,function(i,key))
+{
+$("#table1 tr:last").append("<tr><td>key.EmpId</td><td>key.EmpName</td><td>key.EmpSalary</td>")
+}
+))
+}
+</script>

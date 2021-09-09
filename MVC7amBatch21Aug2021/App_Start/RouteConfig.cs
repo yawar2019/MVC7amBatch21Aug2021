@@ -18,16 +18,18 @@ namespace MVC7amBatch21Aug2021
             routes.MapMvcAttributeRoutes();
 
             routes.MapRoute(
+               name: "Default123",
+               url: "CountryClub/Music",
+               defaults: new { controller = "New", action = "Index", id = UrlParameter.Optional }
+           );
+
+            routes.MapRoute(
                name: "Default",
                url: "{controller}/{action}/{id}",
                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
            );
 
-            routes.MapRoute(
-                name: "Default123",
-                url: "CountryClub/Music",
-                defaults: new { controller = "New", action = "Index", id = UrlParameter.Optional }
-            );
+           
 
            
 

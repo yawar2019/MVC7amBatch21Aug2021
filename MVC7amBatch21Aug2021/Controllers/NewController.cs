@@ -174,7 +174,7 @@ namespace MVC7amBatch21Aug2021.Controllers
 
         }
 
-        public FileResult getFile2()
+        public FileResult getFile2(int? id,string Name)
         {
             return File("~/ActionResult.pdf", "application/pdf");
 
@@ -210,6 +210,42 @@ namespace MVC7amBatch21Aug2021.Controllers
             listObj.Add(obj2);//amrita
 
             return Json(listObj, JsonRequestBehavior.AllowGet);
+        }
+
+        public  RedirectToRouteResult RedirecttoOtherUrl()
+        {
+            return RedirectToRoute("Default123");
+        }
+
+        public RedirectToRouteResult RedirecttoAnotherUrl()
+        {
+
+            return RedirectToAction("getFile2","New",new {id=123,Name="jeevan" });
+        }
+
+        public RedirectToRouteResult RedirecttoAnotherUrl2()
+        {
+            EmployeeModel emp = new Models.EmployeeModel();
+           emp.EmpId = 3;
+           emp.EmpName = "Amrita";
+           emp.EmpSalary = 30000;
+            return RedirectToAction("justice", "justice", emp);
+        }
+
+        public ContentResult MyContent(int? id)
+        {
+            if(id==1)
+            {
+                return Content("Hello World");
+            }
+            else if(id==2)
+            {
+                return Content("<p style=color:red>Hello World</p>");
+            }
+            else
+            {
+                return Content("<script>alert('To Much Cold')</script>");
+            }
         }
     }
 }

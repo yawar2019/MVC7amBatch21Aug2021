@@ -6,11 +6,11 @@ using System.Data;
 using System.Data.SqlClient;
 namespace ADODotnetExample.Models
 {
-     class EmployeeContext
+    class EmployeeContext
     {
         SqlConnection con = new SqlConnection(@"Data Source=AZAM-PC\SQLEXPRESS;Initial Catalog=Employee;Integrated Security=true");
 
-         public List<EmployeeModel> getEmployeeDetails()
+        public List<EmployeeModel> getEmployeeDetails()
         {
             List<EmployeeModel> listObj = new List<Models.EmployeeModel>();
             SqlCommand cmd = new SqlCommand("sp_employee", con);
@@ -21,7 +21,7 @@ namespace ADODotnetExample.Models
             foreach (DataRow dr in dt.Rows)
             {
                 EmployeeModel emp = new Models.EmployeeModel();
-                emp.EmpId =Convert.ToInt32(dr[0]);
+                emp.EmpId = Convert.ToInt32(dr[0]);
                 emp.EmpName = Convert.ToString(dr[1]);
                 emp.EmpSalary = Convert.ToInt32(dr[2]);
 
@@ -29,5 +29,21 @@ namespace ADODotnetExample.Models
             }
             return listObj;
         }
+
+        public int SaveEmployee(EmployeeModel emp)
+        {
+
+            SqlCommand cmd = new SqlCommand("sp_CreateEmployee", con);//storeprocName
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            cmd.Parameters.AddWithValue("@EmpName", emp.EmpName);//PArameter name
+            cmd.Parameters.AddWithValue("@EmpSalary", emp.EmpSalary);
+            int i = cmd.ExecuteNonQuery();//Execute Query
+            con.Close();
+            return i;
+        }
     }
 }
+
+//Create procedure usp_SaveEmployee
+//@EmpName varchar(60),@EmpSalary int

@@ -13,10 +13,10 @@ namespace DatabasedApproach.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EmployeeEntities : DbContext
+    public partial class EmployeeEntities1 : DbContext
     {
-        public EmployeeEntities()
-            : base("name=EmployeeEntities")
+        public EmployeeEntities1()
+            : base("name=EmployeeEntities1")
         {
         }
     
@@ -26,5 +26,6 @@ namespace DatabasedApproach.Models
         }
     
         public virtual DbSet<employeeDetail> employeeDetails { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
     }
 }

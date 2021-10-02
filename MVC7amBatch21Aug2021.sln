@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabasedApproach", "Databa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstApproach", "CodeFirstApproach\CodeFirstApproach.csproj", "{09742590-764C-4511-9815-82E290611C76}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelFirstApproach", "ModelFirstApproach\ModelFirstApproach.csproj", "{ABE1CB73-FD8F-4860-A8BD-E4FC756BFA08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{09742590-764C-4511-9815-82E290611C76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09742590-764C-4511-9815-82E290611C76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09742590-764C-4511-9815-82E290611C76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE1CB73-FD8F-4860-A8BD-E4FC756BFA08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE1CB73-FD8F-4860-A8BD-E4FC756BFA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE1CB73-FD8F-4860-A8BD-E4FC756BFA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE1CB73-FD8F-4860-A8BD-E4FC756BFA08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

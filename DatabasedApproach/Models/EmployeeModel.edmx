@@ -25,6 +25,7 @@
           <Property Name="dob" Type="datetime" />
           <Property Name="Status" Type="bit" Nullable="false" />
           <Property Name="CreatedBy" Type="int" />
+          <Property Name="MobileNo" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="EmployeeModelStoreContainer">
           <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
@@ -46,6 +47,7 @@
           <Property Name="dob" Type="DateTime" Precision="3" />
           <Property Name="Status" Type="Boolean" Nullable="false" />
           <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="EmployeeEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="employeeDetails" EntityType="Self.employeeDetail" />
@@ -68,6 +70,7 @@
           <EntitySetMapping Name="employeeDetails">
             <EntityTypeMapping TypeName="EmployeeModel.employeeDetail">
               <MappingFragment StoreEntitySet="employeeDetails">
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="EmpId" ColumnName="EmpId" />
                 <ScalarProperty Name="EmpName" ColumnName="EmpName" />

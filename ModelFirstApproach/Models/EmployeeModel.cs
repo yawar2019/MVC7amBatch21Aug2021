@@ -7,21 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabasedApproach.Models
+namespace ModelFirstApproach.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class employeeDetail
+    public partial class EmployeeModel
     {
         public int EmpId { get; set; }
         public string EmpName { get; set; }
-        public Nullable<int> EmpSalary { get; set; }
-        public Nullable<int> DeptId { get; set; }
-        public string Address { get; set; }
-        public Nullable<System.DateTime> dob { get; set; }
-        public bool Status { get; set; }
-        public Nullable<int> CreatedBy { get; set; }
-        public string MobileNo { get; set; }
+        public int EmpSalary { get; set; }
     }
 }

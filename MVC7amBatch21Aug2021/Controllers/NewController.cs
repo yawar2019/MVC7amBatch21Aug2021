@@ -247,6 +247,13 @@ namespace MVC7amBatch21Aug2021.Controllers
                 return Content("<script>alert('To Much Cold')</script>");
             }
         }
+
+        public ActionResult HtmlhelperExample()
+        {
+            EmployeeModel emp = new Models.EmployeeModel();
+            emp.EmpName = "Jakie shroff";
+            return View(emp);
+        }
     }
 }
 

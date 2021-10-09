@@ -11,10 +11,13 @@ namespace DatabasedApproach.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web.Mvc;
+
     public partial class employeeDetail
     {
         public int EmpId { get; set; }
+       
+        [Remote()]
         public string EmpName { get; set; }
         public Nullable<int> EmpSalary { get; set; }
         public Nullable<int> DeptId { get; set; }

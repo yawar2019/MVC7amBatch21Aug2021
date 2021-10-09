@@ -1,0 +1,27 @@
+﻿@model MVC7amBatch21Aug2021.Models.EmployeeModel
+@{
+    ViewBag.Title = "HtmlhelperExample";
+}
+
+<script>
+    function fun()
+    {
+        alert("Life is full of surprises");
+    }
+     
+
+
+   
+</script>
+
+<h2>HtmlhelperExample</h2>
+@Html.LabelFor(model=>model.EmpName)
+
+@Html.TextBox("EmpNames",Model.EmpName,new { style = "background-color:pink;",@class="form-control",id="txtEmpName", onclick = "fun()" })
+<input type="text" name="LastName" id="txtLastName" value="shroff" style="background-color:skyblue;" class="form-control" onclick="fun()" />
+
+
+@Html.TextBoxFor(s=>s.EmpName)  
+
+ 
+ 

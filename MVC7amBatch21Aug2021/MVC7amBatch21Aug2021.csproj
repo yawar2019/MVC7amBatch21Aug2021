@@ -163,6 +163,7 @@
     <Content Include="Views\Justice\Injustice.cshtml" />
     <Content Include="Views\New\PartialViewExample.cshtml" />
     <Content Include="Views\Shared\_MyPartialView.cshtml" />
+    <Content Include="Views\New\HtmlhelperExample.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

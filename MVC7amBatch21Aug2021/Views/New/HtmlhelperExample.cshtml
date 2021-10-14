@@ -4,44 +4,43 @@
 }
 
 <script>
-    function fun()
-    {
+    function fun() {
         alert("Life is full of surprises");
     }
-     
 
 
-   
+
+
 </script>
 
 <h2>HtmlhelperExample</h2>
-@Html.LabelFor(model=>model.EmpName)
+@Html.LabelFor(model => model.EmpName)
 
-@Html.TextBox("jhtj",Model.EmpName,new { style = "background-color:pink;",@class="form-control",id="txtEmpName", onclick = "fun()" })
+@Html.TextBox("jhtj", Model.EmpName, new { style = "background-color:pink;", @class = "form-control", id = "txtEmpName", onclick = "fun()" })
 <input type="text" name="LastName" id="txtLastName" value="shroff" style="background-color:skyblue;" class="form-control" onclick="fun()" />
 
-@Html.Password("pwd", "test",null)  
-<span>Male</span>@Html.RadioButton("Gender","Male",true)
+@Html.Password("pwd", "test", null)
+<span>Male</span>@Html.RadioButton("Gender", "Male", true)
 <span>FeMale</span>@Html.RadioButton("Gender", "FeMale")
 <br />
-<span>java</span>@Html.CheckBox("java") <span>Dotnet</span>@Html.CheckBox("Dotnet",true)<br />
-@Html.DropDownList("Country",new List<SelectListItem>()
+<span>java</span>@Html.CheckBox("java") <span>Dotnet</span>@Html.CheckBox("Dotnet", true)<br />
+@Html.DropDownList("Country", new List<SelectListItem>()
 {
 
 new SelectListItem {Text="India",Value="1" },
 new SelectListItem { Text="China",Value="2",Selected=true},
 new SelectListItem { Text="Bangladesh",Value="3"}
 
-},"Select Country"
+}, "Select Country"
 
 )
 
 
 @Html.DropDownList("states")
 
-@Html.DropDownList("MyState",(IEnumerable<SelectListItem>)ViewBag.states,"---Select State---")<br />
+@Html.DropDownList("MyState", (IEnumerable<SelectListItem>)ViewBag.states, "---Select State---")<br />
 <br />
-@Html.DropDownListFor(model=>model.StateId, (IEnumerable<SelectListItem>)ViewBag.states, "---Select State---")<br />
+@Html.DropDownListFor(model => model.StateId, (IEnumerable<SelectListItem>)ViewBag.states, "---Select State---")<br />
 
 
 
@@ -53,10 +52,29 @@ new SelectListItem { Text="Bangladesh",Value="3"}
     @Html.CheckBox("Course")
     <br />
     <input type="checkbox" name="ExtraCr" />
-    <input type="submit"  value="submit" class="form-control"/>
+    <input type="submit" value="submit" class="form-control" />
+    <br />
+    @foreach (var skill in ViewBag.listskill)
+    {
+        <input type="checkbox" name="SkillId" id="@skill.SkillId" value="@skill.SkillId" checked="@skill.isActive" />
+        <label>
+            @skill.SkillName
+        </label><br />
+    }
+
+
 </form>
- 
- <br />
+
+<br />
 @ViewBag.SelectedGender
 <br />
 @ViewBag.SelectedCourse
+<br />
+@if (ViewBag.SelectedSkill != null)
+{
+    foreach (var skill in ViewBag.SelectedSkill)
+    {
+        @skill.SkillName <br />
+    }
+}
+

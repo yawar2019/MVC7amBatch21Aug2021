@@ -254,10 +254,20 @@ namespace MVC7amBatch21Aug2021.Controllers
             ViewBag.states = new SelectList(db.States.ToList(), "Id", "StateName",2);
             EmployeeModel emp = new Models.EmployeeModel();
             emp.EmpName = "Jakie shroff";
+
+            List<Skill> listskill = new List<Models.Skill>()
+            {
+                new Skill {SkillId=1,SkillName="MVC",isActive=true },
+                new Skill {SkillId=2,SkillName="C#",isActive=false },
+                new Skill {SkillId=3,SkillName="Sql",isActive=false }
+            };
+
+            ViewBag.listskill = listskill;
+
             return View(emp);
         }
         [HttpPost]
-        public ActionResult HtmlhelperExample(string Gender,bool Course,string ExtraCr)
+        public ActionResult HtmlhelperExample(string Gender,bool Course,string ExtraCr,int[] SkillId)
         {
             CountryEntities db = new Models.CountryEntities();
             ViewBag.states = new SelectList(db.States.ToList(), "Id", "StateName", 2);
@@ -267,6 +277,16 @@ namespace MVC7amBatch21Aug2021.Controllers
             ViewBag.SelectedGender = "you have selected "+Gender;
             ///////////////////////////////////////////////////
             ViewBag.SelectedCourse = "you have selected " + Course;
+            ///////////////
+            List<Skill> listskill = new List<Models.Skill>()
+            {
+                new Skill {SkillId=1,SkillName="MVC",isActive=true },
+                new Skill {SkillId=2,SkillName="C#",isActive=false },
+                new Skill {SkillId=3,SkillName="Sql",isActive=false }
+            };
+
+            ViewBag.listskill = listskill;
+            ViewBag.SelectedSkill = listskill.Where(i => SkillId.ToArray().Contains(i.SkillId));
 
             return View(emp);
         }

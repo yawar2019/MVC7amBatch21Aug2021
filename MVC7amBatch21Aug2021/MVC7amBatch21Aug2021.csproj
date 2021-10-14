@@ -183,6 +183,7 @@
       <DependentUpon>CountryModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\State.cs">
       <DependentUpon>CountryModel.tt</DependentUpon>
     </Compile>

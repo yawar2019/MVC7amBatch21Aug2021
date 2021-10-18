@@ -52,6 +52,9 @@ new SelectListItem { Text="Bangladesh",Value="3"}
     @Html.CheckBox("Course")
     <br />
     <input type="checkbox" name="ExtraCr" />
+
+    @Html.DropDownListFor(model => model.StateId, (IEnumerable<SelectListItem>)ViewBag.states, "---Select State---",new {@onchange="fun()"})<br />
+
     <input type="submit" value="submit" class="form-control" />
     <br />
     @foreach (var skill in ViewBag.listskill)
@@ -70,6 +73,10 @@ new SelectListItem { Text="Bangladesh",Value="3"}
 <br />
 @ViewBag.SelectedCourse
 <br />
+<br />
+@ViewBag.stateName
+<br />
+
 @if (ViewBag.SelectedSkill != null)
 {
     foreach (var skill in ViewBag.SelectedSkill)
@@ -78,3 +85,29 @@ new SelectListItem { Text="Bangladesh",Value="3"}
     }
 }
 
+@Html.TextArea("Address","Ameerpet",10,10,new {@class="form-control" })
+
+
+<script>
+    function fun()
+    {
+
+        alert('hello world')
+    }
+</script>
+
+
+@*onload = function showdata() {
+            $.ajax({
+                url: "http://localhost:60497/api/EmployeeModels",
+                type: "Get",
+                datatype: "json",
+                success: function (result) {
+                    alert(result);
+                    $.each(result, function (i, key) {
+
+                        $("#table-1 tr:last").after('<tr><td>' + key.Empid + '</td><td>' + key.EmpName + '</td><td>' + key.EmpSalary + '</td></tr>' + '</td><td>' + key.DeptId + '</td></tr>');
+                    });
+                }
+            });
+        }*@

@@ -17,7 +17,7 @@ namespace DatabasedApproach.Models
     {
         public int EmpId { get; set; }
        
-        [Remote()]
+       
         public string EmpName { get; set; }
         public Nullable<int> EmpSalary { get; set; }
         public Nullable<int> DeptId { get; set; }

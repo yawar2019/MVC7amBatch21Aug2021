@@ -267,10 +267,14 @@ namespace MVC7amBatch21Aug2021.Controllers
             return View(emp);
         }
         [HttpPost]
-        public ActionResult HtmlhelperExample(string Gender,bool Course,string ExtraCr,int[] SkillId)
+        public ActionResult HtmlhelperExample(string Gender,bool Course,string ExtraCr,int[] SkillId,int StateId)
         {
             CountryEntities db = new Models.CountryEntities();
             ViewBag.states = new SelectList(db.States.ToList(), "Id", "StateName", 2);
+
+            State state = db.States.Where(s => s.Id == StateId).SingleOrDefault();
+            ViewBag.stateName = state.Id + "," + state.StateName;
+
             EmployeeModel emp = new Models.EmployeeModel();
             emp.EmpName = "Jakie shroff";
             ////////////////////////////////////////////////

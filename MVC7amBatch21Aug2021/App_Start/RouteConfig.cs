@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC7amBatch21Aug2021.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +17,7 @@ namespace MVC7amBatch21Aug2021
             //routes.IgnoreRoute("new/index");
 
             routes.MapMvcAttributeRoutes();
-
+            routes.Add(new Route("test", new customRouteHandler()));
             routes.MapRoute(
                name: "Default123",
                url: "CountryClub/Music",

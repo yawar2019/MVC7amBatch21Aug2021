@@ -294,6 +294,27 @@ namespace MVC7amBatch21Aug2021.Controllers
 
             return View(emp);
         }
+        public ActionResult ValidationExample()
+        {
+           
+            
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ValidationExample(RegistrationModel reg)
+        {
+            if(ModelState.IsValid)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            return View(reg);
+        }
     }
 }
 

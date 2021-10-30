@@ -1,19 +1,21 @@
-﻿using MVC7amBatch21Aug2021.Models;
+﻿using MVC7amBatch21Aug2021.Filter;
+using MVC7amBatch21Aug2021.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc; 
+using System.Web.Mvc;
 
 namespace MVC7amBatch21Aug2021.Controllers
 {
+    [RoutePrefix("India")]
     public class NewController : Controller
     {
         // GET: New hari
 
-        public string Index()
+        public string Index(string id)
         {
-            return "Hello World";
+            return "Hello World "+id;
         }
         public int Index2()
         {
@@ -40,6 +42,7 @@ namespace MVC7amBatch21Aug2021.Controllers
 
         [Route("pistahouse/cake")]
         [Route("pistahouse/juice")]
+        [Route("~/new/Index6")]
         public int Index6()
         {
             return 1211;
@@ -315,6 +318,42 @@ namespace MVC7amBatch21Aug2021.Controllers
 
             return View(reg);
         }
+        [Route("~/jungle/ant/{count}")]
+        [Route("~/jungle/Monkey/{count?}")]
+        [Route("~/jungle/tiger")]
+        public ActionResult TestAttributeExample(int? count)
+        {
+            return Content("Animal live in jumgle "+ count);
+        }
+
+        
+        [Route("~/jungle/whitetiger/{count:int:min(100)}")]
+        public ActionResult TestAttributeExample2(int? count)
+        {
+            return Content("Animal live in jumgle " + count);
+        }
+         
+        [Route("~/jungle/whitetiger/{forest:alpha}")]
+        public ActionResult TestAttributeExample3(string forest)
+        {
+            return Content("Animal live in jumgle " + forest);
+        }
+        [Route("jungle/blacktiger/{forest:bool?}")]
+        public ActionResult TestAttributeExample5(bool? forest)
+        {
+            return Content("Animal live in jumgle " + forest);
+        }
+
+        [UserDefined]
+        public ActionResult GetFilterExample()
+        {
+            ViewBag.PlayerName = "Dhoni";
+              
+            return View();
+
+        }
+
+
     }
 }
 

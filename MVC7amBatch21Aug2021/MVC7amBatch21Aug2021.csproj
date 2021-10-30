@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\JusticeController.cs" />
     <Compile Include="Controllers\NewController.cs" />
+    <Compile Include="Filter\UserDefined.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -218,6 +219,7 @@
     <Content Include="Views\Shared\_MyPartialView.cshtml" />
     <Content Include="Views\New\HtmlhelperExample.cshtml" />
     <Content Include="Views\New\ValidationExample.cshtml" />
+    <Content Include="Views\New\GetFilterExample.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

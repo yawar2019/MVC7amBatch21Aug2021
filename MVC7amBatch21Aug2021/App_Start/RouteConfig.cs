@@ -18,7 +18,7 @@ namespace MVC7amBatch21Aug2021
 
             routes.MapMvcAttributeRoutes();
 
-            routes.Add(new Route("test", new customRouteHandler()));
+            //routes.Add(new Route("test", new customRouteHandler()));
             routes.MapRoute(
                name: "Default123",
                url: "CountryClub/Music",

@@ -42,6 +42,18 @@ namespace MVC7amBatch21Aug2021.Controllers
         {
             return View();
         }
+
+        [Authorize(Roles="Admin")]
+        public ActionResult Aboutus()
+        {
+            return View();
+        }
+
+        [Authorize(Roles="Manager")]
+        public ActionResult ContacUs()
+        {
+            return View();
+        }
     }
 
    

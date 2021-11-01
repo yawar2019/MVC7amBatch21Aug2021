@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Azam\documents\visual studio 2015\Projects\MVC7amBatch21Aug2021\MVC7amBatch21Aug2021\Models\LoginUserModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Azam\Documents\Visual Studio 2015\Projects\MVC7amBatch21Aug2021\MVC7amBatch21Aug2021\Models\LoginUserModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

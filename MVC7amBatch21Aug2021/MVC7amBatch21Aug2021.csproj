@@ -224,6 +224,9 @@
       <DependentUpon>LoginUserModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\RegistrationModel.cs" />
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>LoginUserModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\State.cs">
       <DependentUpon>CountryModel.tt</DependentUpon>
@@ -231,7 +234,11 @@
     <Compile Include="Models\UserDetail.cs">
       <DependentUpon>LoginUserModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserRoleMapping.cs">
+      <DependentUpon>LoginUserModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDefinedRoles\CustomRoles.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -258,6 +265,8 @@
     <Content Include="Views\New\GetFilterExample.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\DashBoard.cshtml" />
+    <Content Include="Views\Login\Aboutus.cshtml" />
+    <Content Include="Views\Login\ContacUs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

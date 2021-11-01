@@ -26,5 +26,7 @@ namespace MVC7amBatch21Aug2021.Models
         }
     
         public virtual DbSet<UserDetail> UserDetails { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<UserRoleMapping> UserRoleMappings { get; set; }
     }
 }

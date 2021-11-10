@@ -352,8 +352,19 @@ namespace MVC7amBatch21Aug2021.Controllers
             return View();
 
         }
+        public ActionResult GetWebService()
+        {
+            ServiceReference1.WebService1SoapClient obj = new ServiceReference1.WebService1SoapClient();
 
+            return Content(obj.Add(4,5).ToString());
+        }
 
+        public ActionResult GetWCFService()
+        {
+            ServiceReference2.Service1Client obj = new ServiceReference2.Service1Client();
+
+            return Content(obj.Mul(4,5).ToString());
+        }
     }
 }
 

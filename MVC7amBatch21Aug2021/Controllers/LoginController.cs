@@ -17,7 +17,7 @@ namespace MVC7amBatch21Aug2021.Controllers
 
         public ActionResult Login()
         {
-            EmployeeEntities db = new EmployeeEntities();
+           
 
             return View();
         }
@@ -54,6 +54,7 @@ namespace MVC7amBatch21Aug2021.Controllers
         {
             return View();
         }
+
     }
 
    

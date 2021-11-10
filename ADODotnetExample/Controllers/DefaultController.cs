@@ -71,5 +71,14 @@ namespace ADODotnetExample.Controllers
 
             return View();
         }
+
+        public ActionResult ConsumedWcfServiceHostedOnIIS()
+        {
+            ServiceReference1.Service1Client obj = new ServiceReference1.Service1Client("WSHttpBinding_IService1");
+            var result=obj.Mul(10, 20);
+            ServiceReference1.Service1Client obj1 = new ServiceReference1.Service1Client("NetTcpBinding_IService1");
+            var result1 = obj1.Mul(10, 20);
+            return Content(result1.ToString());
+        }
     }
 }
